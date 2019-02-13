@@ -1,0 +1,8 @@
+future==0.17.1
+iso8601==0.1.12
+Pillow==5.4.1
+pygame==1.9.4
+PyPDF2==1.26.0
+pyserial==3.4
+PyYAML==3.13
+reportlab==3.5.13

@@ -39,6 +39,12 @@ sudo apt-get install python3-pypdf2
 sudo apt-get install python3-reportlab
 ```
 
+## If you are using virtual environment, you can use requirements.txt
+
+```
+pip3 install -r requirements.txt
+```
+
 ## Optional for printer support, currently untested:
 ```
 sudo apt-get install lpr
