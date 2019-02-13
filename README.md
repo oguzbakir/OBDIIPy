@@ -1,5 +1,5 @@
-#OBDIIPy
-##Warning
+# OBDIIPy
+## Warning
 This project is highly experimental. Do not use on your daily expensive cars.
 
 Trouble codes and descriptions supplied with this source code have
@@ -27,7 +27,7 @@ for messing up your car, we will laugh at you.
 Do not use fake devices, there are reports that they can cause damage.
 https://obd-car-doctor.com/en-us/thread/Attention-Bad-Bluetooth-adapters-/
 
-##Requirements
+## Requirements
 This application has been tested with a Original USB ELM327 OBDII cable and a Original
 Bluetooth ELM327 OBDII dongle.
 
@@ -54,7 +54,7 @@ sudo apt-get install bluez
 sudo apt-get install bluetoothd
 ```
 
-##Start application from the command line:
+## Start application from the command line:
 ```
 chmod +x OBDIIPy.py
 sudo ./OBDIIPy.py
@@ -64,14 +64,14 @@ OR:
 sudo python3 OBDIIPy.py
 ```
 
-##Adding Missing PID Support
+## Adding Missing PID Support
 Additional PID code support may have been added over time. But
 for other vehicles there may be missing supported PID codes. To add support
 for a PID code, add the PID code to the ELM327 class using existing PID source
 code as a guide. And check the formatting of the data in the PID text file
 definitions.
 
-##What does this mean for other vehicles
+## What does this mean for other vehicles
 
 The trouble code reporting is standard to the OBDII protocol. So trouble code
 reporting should work. There are standard ISO trouble code descriptions which
@@ -87,7 +87,7 @@ You should be able to add them in the ELM327.py file. I am unlikely to have
 time to add them, but you can report them as missing and if I have time I will
 attempt to add them if you reply as to if they are working correctly after.
 
-##Bluetooth service
+## Bluetooth service
 Get the status of the Bluetooth service.
 ```
 sudo service bluetooth status
@@ -163,7 +163,7 @@ ready for use.
 quit
 ```
 
-##Creating a serial device for use in the OBDII application
+## Creating a serial device for use in the OBDII application
 
 rfcomm associates the paired device ID with a serial device name.
 ```
@@ -185,7 +185,7 @@ You shouldn't need this command, force rfdevices to stop.
 rfkill list
 ```
 
-##Unpairing a Bluetooth device
+## Unpairing a Bluetooth device
 
 Start the Bluetooth utility.
 ```
@@ -211,7 +211,7 @@ Exit the Bluetooth utility.
 quit
 ```
 
-##About clone ELM devices
+## About clone ELM devices
 
 If the MAC address of your adapter
 
