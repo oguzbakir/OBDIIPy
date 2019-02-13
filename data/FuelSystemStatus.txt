@@ -1,0 +1,7 @@
+00 N/A
+01 Open loop, engine warming
+02 Closed loop, using O2 feedback
+04 Open loop, engine load or deceleration
+08 Open loop, SYSTEM FAILURE
+16 Closed loop, FEEDBACK FAULT
+
