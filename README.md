@@ -213,9 +213,7 @@ quit
 
 ## About clone ELM devices
 
-If the MAC address of your adapter
-
-starts with the numbers 66:35:56: ...  or 88:35:56:...(for example, 66:35:56:78:90:AB)
+If the MAC address of your adapter starts with the numbers 66:35:56: ...  or 88:35:56:...(for example, 66:35:56:78:90:AB)
  
 * 00:00:00:00:00:01
 * AA:BB:CC:11:22:33
