@@ -38,18 +38,18 @@ class Confirm(Visual.Visual):
             self.Buttons["YES"] = Button.Button(self.ThisSurface, "YES", Visual.PRESS_DOWN, Button.Visual.BUTTON_HEIGHT,
                                                 self.yLen - 1.5 * Button.Visual.BUTTON_HEIGHT,
                                                 Button.Visual.BUTTON_HEIGHT, Button.Visual.BUTTON_HEIGHT,
-                                                "IMAGE:ICONS/Yes.png")
+                                                "IMAGE:icons/Yes.png")
             self.Buttons["NO"] = Button.Button(self.ThisSurface, "NO", Visual.PRESS_DOWN,
                                                self.xLen - 2 * Button.Visual.BUTTON_HEIGHT,
                                                self.yLen - 1.5 * Button.Visual.BUTTON_HEIGHT,
                                                Button.Visual.BUTTON_HEIGHT, Button.Visual.BUTTON_HEIGHT,
-                                               "IMAGE:ICONS/No.png")
+                                               "IMAGE:icons/No.png")
         else:
             self.Buttons["YES"] = Button.Button(self.ThisSurface, "YES", Visual.PRESS_DOWN,
                                                 (self.xLen - Button.Visual.BUTTON_HEIGHT) / 2,
                                                 self.yLen - 1.5 * Button.Visual.BUTTON_HEIGHT,
                                                 Button.Visual.BUTTON_HEIGHT, Button.Visual.BUTTON_HEIGHT,
-                                                "IMAGE:ICONS/Yes.png")
+                                                "IMAGE:icons/Yes.png")
 
         self.Buttons["UI_BLOCKER"].SetVisible(False)
 

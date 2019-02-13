@@ -8,6 +8,7 @@
 
 
 import os
+import subprocess
 import pygame
 import Visual
 import Button
@@ -209,8 +210,8 @@ class Display:
     # /*******************************************/
     def LoadMetersTab(self, ValidPIDs):
         try:
-            if os.path.isfile("CONFIG/METERS.CFG"):
-                File = open("CONFIG/METERS.CFG", 'r')
+            if os.path.isfile("config/meters.cfg"):
+                File = open("config/meters.cfg", 'r')
                 xPos = 0
                 Name = ""
                 TextLine = "."
@@ -256,7 +257,7 @@ class Display:
     # /*****************************************/
     def SaveMetersTab(self):
         if len(self.Meters) > 1:
-            File = open("CONFIG/METERS.CFG", 'w')
+            File = open("config/meters.cfg", 'w')
             for ThisGadget in self.Meters:
                 if type(self.Meters[ThisGadget]) is not str and type(self.Meters[ThisGadget]) is not Button.Button:
                     Data = "Name=" + str(self.Meters[ThisGadget].GetName())

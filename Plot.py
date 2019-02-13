@@ -118,8 +118,8 @@ class Plot(Visual.Visual):
     def LoadSeriesConfig(self, ValidPIDs):
         try:
             self.ClearConfig()
-            if os.path.isfile("CONFIG/PLOT_SERIES.CFG"):
-                File = open("CONFIG/PLOT_SERIES.CFG", 'r')
+            if os.path.isfile("config/plot_series.cfg"):
+                File = open("config/plot_series.cfg", 'r')
                 Index = 0
                 TextLine = "."
                 while TextLine != "":
@@ -143,7 +143,7 @@ class Plot(Visual.Visual):
     # /* Save series config to disk. */
     # /*******************************/
     def SaveSeriesConfig(self):
-        File = open("CONFIG/PLOT_SERIES.CFG", 'w')
+        File = open("config/plot_series.cfg", 'w')
         for Index in range(PLOT_COUNT):
             Data = "PID=" + str(self.PID[Index])
             File.write(Data + "\n")

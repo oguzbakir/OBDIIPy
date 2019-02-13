@@ -68,93 +68,93 @@ class ELM327:
         # /*************************************************/
         self.VehicleObdStandards = {}
         try:
-            with open("DATA/VehicleObdStandards.txt") as ThisFile:
+            with open("data/VehicleObdStandards.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Digit, Code = ThisLine.partition(" ")[::2]
                     self.VehicleObdStandards[Digit] = Code.strip()
         except Exception as Catch:
-            print(STRING_ERROR + " DATA/VehicleObdStandards.txt : " + str(Catch))
-            self.InitResult += "FAILED TO READ FILE: DATA/VehicleObdStandards.txt\n"
+            print(STRING_ERROR + " data/VehicleObdStandards.txt : " + str(Catch))
+            self.InitResult += "FAILED TO READ FILE: data/VehicleObdStandards.txt\n"
 
         #  /**********************************************************/
         # /* Read Commanded Secondary Air Status lookup table data. */
         # /**********************************************************/
         self.CommandedSecondaryAirStatus = {}
         try:
-            with open("DATA/CommandedSecondaryAirStatus.txt") as ThisFile:
+            with open("data/CommandedSecondaryAirStatus.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Digit, Code = ThisLine.partition(" ")[::2]
                     self.CommandedSecondaryAirStatus[Digit] = Code.strip()
         except Exception as Catch:
-            print(STRING_ERROR + " DATA/CommandedSecondaryAirStatus.txt : " + str(Catch))
-            self.InitResult += "FAILED TO READ FILE: DATA/CommandedSecondaryAirStatus.txt\n"
+            print(STRING_ERROR + " data/CommandedSecondaryAirStatus.txt : " + str(Catch))
+            self.InitResult += "FAILED TO READ FILE: data/CommandedSecondaryAirStatus.txt\n"
 
         #  /**********************************************/
         # /* Read Fuel System Status lookup table data. */
         # /**********************************************/
         self.FuelSystemStatus = {}
         try:
-            with open("DATA/FuelSystemStatus.txt") as ThisFile:
+            with open("data/FuelSystemStatus.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Digit, Code = ThisLine.partition(" ")[::2]
                     self.FuelSystemStatus[Digit] = Code.strip()
         except Exception as Catch:
-            print(STRING_ERROR + " DATA/FuelSystemStatus.txt : " + str(Catch))
-            self.InitResult += "FAILED TO READ FILE: DATA/FuelSystemStatus.txt\n"
+            print(STRING_ERROR + " data/FuelSystemStatus.txt : " + str(Catch))
+            self.InitResult += "FAILED TO READ FILE: data/FuelSystemStatus.txt\n"
 
         #  /**********************************************/
         # /* Read OBDII Trouble Code lookup table data. */
         # /**********************************************/
         self.TroubleCodePrefix = {}
         try:
-            with open("DATA/TroubleCodePrefix.txt") as ThisFile:
+            with open("data/TroubleCodePrefix.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Digit, Code = ThisLine.partition(" ")[::2]
                     self.TroubleCodePrefix[Digit] = Code.strip()
         except Exception as Catch:
-            print(STRING_ERROR + " DATA/TroubleCodePrefix.txt : " + str(Catch))
-            self.InitResult += "FAILED TO READ FILE: DATA/TroubleCodePrefix.txt\n"
+            print(STRING_ERROR + " data/TroubleCodePrefix.txt : " + str(Catch))
+            self.InitResult += "FAILED TO READ FILE: data/TroubleCodePrefix.txt\n"
 
         #  /**********************************************************/
         # /* Read OBDII Trouble Code Description lookup table data. */
         # /**********************************************************/
-        self.LoadVehicle("DATA/TroubleCodes-R53_Cooper_S.txt")
+        self.LoadVehicle("data/TroubleCodes-R53_Cooper_S.txt")
 
         #  /***************************************************/
         # /* Read Mode 01 PID description lookup table data. */
         # /***************************************************/
         self.PidDescriptionsMode01 = {}
         try:
-            with open("DATA/PidDescriptionsMode01.txt") as ThisFile:
+            with open("data/PidDescriptionsMode01.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Digit, Code = ThisLine.partition(" ")[::2]
                     self.PidDescriptionsMode01[Digit] = Code.strip()
         except:
-            self.InitResult += "FAILED TO READ FILE: DATA/PidDescriptionsMode01.txt\n"
+            self.InitResult += "FAILED TO READ FILE: data/PidDescriptionsMode01.txt\n"
 
         #  /***************************************************/
         # /* Read Mode 05 PID description lookup table data. */
         # /***************************************************/
         self.PidDescriptionsMode05 = {}
         try:
-            with open("DATA/PidDescriptionsMode05.txt") as ThisFile:
+            with open("data/PidDescriptionsMode05.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Digit, Code = ThisLine.partition(" ")[::2]
                     self.PidDescriptionsMode05[Digit] = Code.strip()
         except:
-            self.InitResult += "FAILED TO READ FILE: DATA/PidDescriptionsMode05.txt\n"
+            self.InitResult += "FAILED TO READ FILE: data/PidDescriptionsMode05.txt\n"
 
         #  /***************************************************/
         # /* Read Mode 09 PID description lookup table data. */
         # /***************************************************/
         self.PidDescriptionsMode09 = {}
         try:
-            with open("DATA/PidDescriptionsMode09.txt") as ThisFile:
+            with open("data/PidDescriptionsMode09.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Digit, Code = ThisLine.partition(" ")[::2]
                     self.PidDescriptionsMode09[Digit] = Code.strip()
         except:
-            self.InitResult += "FAILED TO READ FILE: DATA/PidDescriptionsMode09.txt\n"
+            self.InitResult += "FAILED TO READ FILE: data/PidDescriptionsMode09.txt\n"
 
     def __del__(self):
         # Close the ELM327 device after use.
@@ -167,13 +167,13 @@ class ELM327:
         self.TroubleCodeDescriptions = {}
         # Load the ISO/SAE Trouble Code Descriptions.
         try:
-            with open("DATA/TroubleCodes-ISO-SAE.txt") as ThisFile:
+            with open("data/TroubleCodes-ISO-SAE.txt") as ThisFile:
                 for ThisLine in ThisFile:
                     Code, Description = ThisLine.partition(" ")[::2]
                     self.TroubleCodeDescriptions[Code] = Description.strip()
         except Exception as Catch:
-            print(STRING_ERROR + " DATA/TroubleCodes-ISO-SAE.txt : " + str(Catch))
-            self.InitResult += "FAILED TO READ FILE: DATA/TroubleCodes-ISO-SAE.txt\n"
+            print(STRING_ERROR + " data/TroubleCodes-ISO-SAE.txt : " + str(Catch))
+            self.InitResult += "FAILED TO READ FILE: data/TroubleCodes-ISO-SAE.txt\n"
 
         # Load the Vehicle/Manufacturer Trouble Code Descriptions.
         try:

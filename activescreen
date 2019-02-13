@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+## find the resolution of the active screen
+## based on Adam Bowen's solution at:
+## https://superuser.com/questions/603528/how-to-get-the-current-monitor-resolution-or-monitor-name-lvds-vga1-etc
+##
+OFFSET_RE="[+-]([-0-9]+)[+-]([-0-9]+)"
+# find offset in window data in form 143x133-0+0
+
+# Get mouse position
+pos=($(xdotool getmouselocation | sed -r "s/^x:([[:digit:]]+) y:([[:digit:]]+).*/\1 \2/p"))
+
+# Loop through each screen and compare the offset with the window
+# coordinates.
+while read name width height xoff yoff
+do
+  if [ "${pos[0]}" -ge "$xoff" \
+    -a "${pos[1]}" -ge "$yoff" \
+    -a "${pos[0]}" -lt "$(($xoff+$width))" \
+    -a "${pos[1]}" -lt "$(($yoff+$height))" ]
+  then
+      monitor=$name
+      screenw=$width
+      screenh=$height
+  fi
+done < <(xrandr | grep -w connected |
+  sed -r "s/^([^ ]*).*\b([-0-9]+)x([-0-9]+)$OFFSET_RE.*$/\1 \2 \3 \4 \5/" |
+  sort -nk4,5)
+
+# If we found a monitor, echo it out, otherwise print an error.
+if [ ! -z "$monitor" ]
+then
+    # found monitor
+    echo $screenw $screenh
+    exit 0
+else
+    # could not find monitor
+    exit 1
+fi

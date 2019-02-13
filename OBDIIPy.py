@@ -478,7 +478,7 @@ while ExitFlag == False:
                     elif ButtonGadget["BUTTON"] == "SAVE":
                         # Get the date and time for the report filename.
                         Now = datetime.datetime.now()
-                        FileName = "SAVE/"
+                        FileName = "save/"
                         FileName += Now.strftime("%Y-%m-%d_%H-%M-%S_")
                         # Get Vehicle VIN for report filename.
                         FileName += ThisELM327.DoPID("0902").replace(' ', '') + ".pdf"
