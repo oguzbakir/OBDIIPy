@@ -52,7 +52,16 @@ class Display:
         pygame.init()
         pygame.mixer.init()
         pygame.font.init()
-        self.ThisSurface = pygame.display.set_mode((0, 0), pygame.FULLSCREEN | pygame.HWSURFACE | pygame.DOUBLEBUF)
+        res = subprocess.run("./activescreen", stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if (res.returncode == 0):
+            wh = res.stdout.split(b' ')
+            screenw = int(wh[0])
+            screenh = int(wh[1])
+            self.ThisSurface = pygame.display.set_mode((screenw, screenh), pygame.RESIZABLE)
+        else:
+            print("No screens detected")
+            exit(1)
+        #self.ThisSurface = pygame.display.set_mode((0, 0), pygame.FULLSCREEN | pygame.HWSURFACE | pygame.DOUBLEBUF)
         # Hide mouse pointer, using a touch screen for click events.
         #		pygame.mouse.set_visible(False)
 
@@ -64,7 +73,7 @@ class Display:
         self.SurfaceXLen = pygame.display.Info().current_w
         self.SurfaceYLen = pygame.display.Info().current_h
 
-        # Scale gagit sizes to a preportion of the display surface.
+        # Scale gadget sizes to a preportion of the display surface.
         self.GadgetWidth = int(self.SurfaceXLen / 3)
         self.GadgetHeight = int((self.SurfaceYLen - Visual.BUTTON_HEIGHT) / 1.4)
         self.ButtonWidth = int(self.SurfaceXLen / 12)
