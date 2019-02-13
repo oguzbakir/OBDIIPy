@@ -27,6 +27,8 @@ for messing up your car, we will laugh at you.
 Do not use fake devices, there are reports that they can cause damage.
 https://obd-car-doctor.com/en-us/thread/Attention-Bad-Bluetooth-adapters-/
 
+![](./img/ss.png)
+
 ## Requirements
 This application has been tested with a Original USB ELM327 OBDII cable and a Original
 Bluetooth ELM327 OBDII dongle.

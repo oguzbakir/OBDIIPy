@@ -31,17 +31,17 @@ class Gadget(Visual.Visual):
         # Buttons displayed on a gague.
         self.Buttons = {
             "SELECT": Button.Button(self.ThisSurface, "SELECT", Visual.PRESS_DOWN, 0, 0, Visual.BUTTON_HEIGHT,
-                                    Visual.BUTTON_HEIGHT, "IMAGE:ICONS/Select.png"),
+                                    Visual.BUTTON_HEIGHT, "IMAGE:icons/Select.png"),
             "SWITCH": Button.Button(self.ThisSurface, "SWITCH", Visual.PRESS_DOWN,
                                     (xLen - Visual.BUTTON_HEIGHT) * 2 / 6, 0, Visual.BUTTON_HEIGHT,
-                                    Visual.BUTTON_HEIGHT, "IMAGE:ICONS/Switch.png"),
+                                    Visual.BUTTON_HEIGHT, "IMAGE:icons/Switch.png"),
             "DRAG": Button.Button(self.ThisSurface, "DRAG", Visual.PRESS_DOWN, (xLen - Visual.BUTTON_HEIGHT) * 4 / 6, 0,
-                                  Visual.BUTTON_HEIGHT, Visual.BUTTON_HEIGHT, "IMAGE:ICONS/Drag.png"),
+                                  Visual.BUTTON_HEIGHT, Visual.BUTTON_HEIGHT, "IMAGE:icons/Drag.png"),
             "CLOSE": Button.Button(self.ThisSurface, "CLOSE", Visual.PRESS_DOWN, xLen - Visual.BUTTON_HEIGHT, 0,
-                                   Visual.BUTTON_HEIGHT, Visual.BUTTON_HEIGHT, "IMAGE:ICONS/Close.png"),
+                                   Visual.BUTTON_HEIGHT, Visual.BUTTON_HEIGHT, "IMAGE:icons/Close.png"),
         }
 
-        # Attributes applied to the various styles of gague.
+        # Attributes applied to the various styles of gauge.
         self.StyleAttrib = {
             STYLE_GAUGE: {
                 "LABEL": Text,

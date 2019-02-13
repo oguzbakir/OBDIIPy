@@ -57,7 +57,7 @@ class Display:
             wh = res.stdout.split(b' ')
             screenw = int(wh[0])
             screenh = int(wh[1])
-            self.ThisSurface = pygame.display.set_mode((screenw, screenh), pygame.RESIZABLE)
+            self.ThisSurface = pygame.display.set_mode((screenw, screenh), pygame.NOFRAME)
         else:
             print("No screens detected")
             exit(1)

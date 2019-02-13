@@ -35,7 +35,7 @@ class Select(Visual.Visual):
             "UI_BLOCKER": Button.Button(self.ThisSurface, "UI_BLOCKER", Visual.PRESS_NONE, -self.xLen, -self.yLen,
                                         self.DisplayXLen, self.DisplayYLen, "UI_BLOCKER"),
             "CLOSE": Button.Button(self.ThisSurface, "CLOSE", Visual.PRESS_DOWN, self.xLen - Visual.BUTTON_HEIGHT, 0,
-                                   Visual.BUTTON_HEIGHT, Visual.BUTTON_HEIGHT, "IMAGE:ICONS/Close.png"),
+                                   Visual.BUTTON_HEIGHT, Visual.BUTTON_HEIGHT, "IMAGE:icons/Close.png"),
         }
 
         self.Buttons["UI_BLOCKER"].SetVisible(False)
