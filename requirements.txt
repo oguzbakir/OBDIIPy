@@ -5,4 +5,4 @@ pygame==1.9.4
 PyPDF2==1.26.0
 pyserial==3.4
 PyYAML==4.2b1
-reportlab==3.5.13
+reportlab==3.5.55
